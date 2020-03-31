@@ -106,18 +106,26 @@ public class Polynom {
     }
 
     //bonusova uloha: integral na zadaném rozsahu a,b
-    public Polynom integrate() {
-        
+    public double integrate(int a,int b) {
+       double[] coefI = new double[coef.length];
+       for (int i = 0; i < coefI.length; i++) {
+           coefI[i] = coef[i]/(coef.length - i);
+       }
+       Polynom integral = new Polynom(coefI);
+       double result = integral.computeVal(b) - integral.computeVal(a);
+       return result;
     }
     
     public static void main(String[] args) {
-        double[] a = {6, 0, 3, 5};
+        double[] a = {6, 1, 3, 5};
         Polynom p1 = Polynom.getInstance(a);
         /*System.out.println(p1.toString());
         System.out.println(p1.getCoefAt(3));
         System.out.println(p1.derivate());
         System.out.println(p1.computeVal(3));*/
         System.out.println(p1.toStringMath());
+        
+        System.out.println(p1.integrate(1, 2));
     }
 
 }
