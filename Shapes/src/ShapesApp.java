@@ -1,5 +1,9 @@
 
+import java.io.PrintStream;
 import java.util.ArrayList;
+import java.util.Collections;
+import static java.util.Collections.list;
+import java.util.Comparator;
 import java.util.Scanner;
 
 /*
@@ -10,13 +14,11 @@ import java.util.Scanner;
 
 /**
  *
- * @author vojta
+ * @author vojta.patek
  */
 public class ShapesApp {
 
-    /**
-     * @param args the command line arguments
-     */
+    
     
     public static Scanner sc = new Scanner(System.in);
     public static ArrayList<Shape> shapes = new ArrayList<>();
@@ -52,8 +54,9 @@ public class ShapesApp {
                     findWithMaxArea();
                     break;
                 case 8:
-                    getObjectInfo();
+                    sortByArea();
                     break;
+             
                 default:
                     System.out.println("Chybna volba");
             }
@@ -70,7 +73,7 @@ public class ShapesApp {
         System.out.println("5. Vypis geometricke utvary");
         System.out.println("6. Vypocti celkovou plochu");
         System.out.println("7. Vypis utvar s najvetsi plochou");
-        System.out.println("8. Vypis plochu vybraneho utvaru");
+        System.out.println("8. Setřiď útvary podle plochy");
         System.out.println("0. Konec programu");
     }
     
@@ -138,11 +141,23 @@ public class ShapesApp {
         System.out.println(shapes.get(ind));
     }
     
-    //TODO zobrazit vsechny, nechat vybrat a o vybranem zobrazit info
-    private static void getObjectInfo() {
-        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+    //TODO setridit podle plochy
+    private static void sortByArea() {
+        Collections.sort(shapes);
+        for(Shape shape : shapes) {
+            System.out.println(shape);
+        }
+        
+           
+        }
+         
+            
+        
+        
     }
-}
+    
+    
+
     
     
 

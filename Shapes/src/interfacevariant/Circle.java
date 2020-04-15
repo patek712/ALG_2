@@ -1,14 +1,18 @@
+
+
+
 /*
  * To change this license header, choose License Headers in Project Properties.
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
+package interfacevariant;
 
 /**
  *
  * @author vojta
  */
-public class Circle extends Shape{ //Circle je typove kompatibilni s Shape, Circle IS A Shape
+public class Circle implements ShapeInterface { //Circle je typove kompatibilni s ShapeInterface
     //data
     private double r;
 
@@ -31,8 +35,8 @@ public class Circle extends Shape{ //Circle je typove kompatibilni s Shape, Circ
 
     @Override
     public String toString() {
-        //return "Circle{" + "r=" + r + '}';
-        return super.toString() + String.format(" r = %.2f", r);
+        return "Circle{" + "r=" + r + '}';
+        //return super.toString() + String.format(" r = %.2f", r);
     }
     
     //methods
@@ -46,8 +50,6 @@ public class Circle extends Shape{ //Circle je typove kompatibilni s Shape, Circ
         System.out.println(c1);
         System.out.println(c1.computeArea());
     }
-
-    
     
     
 }
