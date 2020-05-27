@@ -32,8 +32,8 @@ public class JavaMail {
      */
     public static void SendMail(String email) {
 
-        final String username = "czmeteorologyapp@gmail.com";
-        final String password = "Tulavi2018";
+        final String username = "";
+        final String password = "";
 
         Properties props = new Properties();
         props.put("mail.smtp.auth", true);
